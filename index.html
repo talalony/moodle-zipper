@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodleZipper</title>
+    <!-- Google Fonts - Lexend -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <div id="header">
+            <div class="header-left">
+                <div class="header-logo">
+                    <span class="material-icons">folder_zip</span>
+                    <span class="header-logo-text">MoodleZipper</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn primary" id="help-btn" title="Help">
+                    <span class="material-icons">help_outline</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="main-container">
+            <!-- Main Content -->
+            <div id="main-content">
+                <div class="content-wrapper">
+                    <div class="upload-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Upload Files</h2>
+                            <p class="card-subtitle">Upload your CSV file and PDF files to create organized Moodle submission folders</p>
+                        </div>
+
+                        <div class="upload-section">
+                            <div class="upload-group">
+                                <label for="csvFile" class="upload-label">
+                                    <div class="upload-icon">
+                                        <span class="material-icons">description</span>
+                                    </div>
+                                    <div class="upload-info">
+                                        <span class="upload-title">CSV File</span>
+                                        <span class="upload-subtitle">Upload student data</span>
+                                    </div>
+                                    <input type="file" id="csvFile" accept=".csv" class="file-input">
+                                </label>
+                                <div class="file-info" id="csvInfo"></div>
+                            </div>
+
+                            <div class="upload-group">
+                                <label for="pdfFiles" class="upload-label">
+                                    <div class="upload-icon">
+                                        <span class="material-icons">picture_as_pdf</span>
+                                    </div>
+                                    <div class="upload-info">
+                                        <span class="upload-title">PDF Files</span>
+                                        <span class="upload-subtitle">Upload graded notebooks</span>
+                                    </div>
+                                    <input type="file" id="pdfFiles" accept=".pdf" multiple class="file-input">
+                                </label>
+                                <div class="file-info" id="pdfInfo"></div>
+                            </div>
+                        </div>
+
+                        <button id="processButton" class="btn btn-primary btn-lg" disabled>
+                            <span class="material-icons">build</span>
+                            <span>Process Files</span>
+                        </button>
+                    </div>
+
+                    <div id="progress" class="progress-card" style="display: none;">
+                        <div class="card-header">
+                            <h2 class="card-title">Processing</h2>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <p id="progressText" class="progress-text">Initializing...</p>
+                    </div>
+
+                    <div id="output" class="output-card" style="display: none;">
+                        <div class="card-header">
+                            <h2 class="card-title">Results</h2>
+                            <button id="downloadButton" class="btn btn-primary btn-sm">
+                                <span class="material-icons">download</span>
+                                Download ZIP
+                            </button>
+                        </div>
+                        <div id="outputLog" class="output-log"></div>
+                    </div>
+
+                    <div id="errorMessage" class="error-card" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
