@@ -44,7 +44,6 @@ body {
   height: 100%;
 }
 
-/* Header */
 #header {
   height: 64px;
   background: var(--panel-bg);
@@ -124,14 +123,12 @@ body {
   color: white;
 }
 
-/* Main Container */
 #main-container {
   flex: 1;
   display: flex;
   overflow: hidden;
 }
 
-/* Main Content */
 #main-content {
   flex: 1;
   display: flex;
@@ -146,7 +143,6 @@ body {
   margin: 0 auto;
 }
 
-/* Cards */
 .card-header {
   margin-bottom: 1.5rem;
 }
@@ -260,7 +256,6 @@ body {
   font-weight: 500;
 }
 
-/* Buttons */
 .btn {
   display: flex;
   align-items: center;
@@ -321,7 +316,6 @@ body {
   font-size: 1rem;
 }
 
-/* Progress */
 .progress-card {
   background: var(--panel-bg);
   border: 1px solid var(--border-color);
@@ -354,7 +348,6 @@ body {
   font-weight: 500;
 }
 
-/* Output */
 .output-card {
   background: var(--panel-bg);
   border: 1px solid var(--border-color);
@@ -421,7 +414,6 @@ body {
   border-left-color: var(--primary-color);
 }
 
-/* Error */
 .error-card {
   background: #fee2e2;
   border: 1px solid #fecaca;
@@ -440,7 +432,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Scrollbar */
 .output-log::-webkit-scrollbar {
   width: 6px;
 }
@@ -459,7 +450,6 @@ body {
   background: var(--primary-dark);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   #main-content {
     padding: 1rem;
